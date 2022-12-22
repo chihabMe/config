@@ -22,7 +22,7 @@ space+"   open a terminal
 space+f+f open fzf 
 
 ##plugs 
-space+p+i  run plug install
+space+g+g  run plug install
 
 
 
