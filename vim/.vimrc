@@ -1,12 +1,12 @@
 set number
-
 let mapleader = " "
 
 
 nnoremap <leader>ft :NERDTreeToggle<CR>
 nnoremap <leader>ff :FZF<CR>
 nnoremap <leader>ff :FZF<CR>
-nnoremap <leader>pi :PlugInstall<CR> 
+
+nnoremap <leader>gg :PlugInstall<CR> 
 
 nnoremap <leader>wh <C-w>h 
 nnoremap <leader>wj <C-w>j 
@@ -20,17 +20,20 @@ nnoremap <leader>wL <C-w>L
 
 nnoremap <leader>ws <C-w>s 
 nnoremap <leader>wv <C-w>v 
-nnoremap <leader>wd :q<CR>
+nnoremap <leader>wd :q!<CR>
 
 nnoremap <leader>fs :w<CR>
 
 nnoremap <leader>" :term<CR>
+nnoremap <leader>tt :TagbarToggle<CR>
 
 
 
 call plug#begin()
+Plug 'tpope/vim-fugitive'
+Plug 'majutsushi/tagbar'
 Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin:'
+
 Plug 'ryanoasis/vim-devicons'
 Plug 'sheerun/vim-polyglot'
 Plug 'vim-airline/vim-airline'
@@ -39,6 +42,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'fatih/vim-go', { 'do': ':GoUpdateBinaries' }
 ""themes
 Plug 'romgrk/doom-one.vim'
+Plug 'ayu-theme/ayu-vim' " or other package manager
 
 
 call plug#end()
@@ -203,3 +207,10 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+"theme
+set termguicolors     " enable true colors support
+let ayucolor="light"  " for light version of theme
+let ayucolor="mirage" " for mirage version of theme
+let ayucolor="dark"   " for dark version of theme
+color doom-one
